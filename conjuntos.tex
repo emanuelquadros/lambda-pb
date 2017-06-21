@@ -1,0 +1,116 @@
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage{graphicx}
+\usepackage{longtable}
+\usepackage{float}
+\usepackage{wrapfig}
+\usepackage{rotating}
+\usepackage[normalem]{ulem}
+\usepackage[fleqn]{amsmath}
+\usepackage{textcomp}
+\usepackage{marvosym}
+\usepackage{wasysym}
+\usepackage{amssymb}
+\usepackage{hyperref}
+\tolerance=1000
+\usepackage[backend=biber,bibstyle=biblatex-sp-unified,citestyle=authoryear,maxcitenames=3,doi=false,url=false]{biblatex}
+\addbibresource{~/Dropbox/research/ling.bib}
+\usepackage[brazil]{babel}
+\usepackage[margin=1in]{geometry}
+\usepackage{bookmark}
+\usepackage{stmaryrd}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{tabularx}
+\usepackage{multirow}
+\usepackage{soul, color}
+\soulregister\fullcite7
+\usepackage{fontspec}
+\setmainfont{Linux Libertine O}
+\usepackage[libertine]{newtxmath}
+\usepackage{mdframed}
+\usepackage{csquotes}
+\renewcommand{\baselinestretch}{1.5}
+\usepackage{tabto}
+\usepackage{gb4e}
+\noautomath
+\newcommand{\den}[1]{\ensuremath{\llbracket #1\rrbracket}}
+\hypersetup{hidelinks=true}
+\author{}
+\date{Versão de \today}
+\title{Revisão de teoria dos conjuntos para semanticistas}
+
+\begin{document}
+\maketitle
+
+\section{O que é um conjunto?}
+\label{sec:conjuntos}
+
+Um conjunto é uma coleção de objetos quaisquer. Esses objetos são os \textbf{elementos} (ou \textbf{membros}) do respectivo conjunto.
+
+Seguem alguns exemplos de conjuntos. Esses exemplos serão utilizados no restante deste texto.
+
+\begin{align*}
+  A & = \{2, 3, 4\}\\
+  B &= \{\mathrm{Frege}, \mathrm{Montague}, \mathrm{Partee}, \mathrm{Russell}\}\\
+  C &= \{2, 3, \{4\}, \mathrm{Partee}\}\\
+  D &= \{\text{todas as sentenças do português}\}\\
+  E &= \{4, 3, 2\}
+\end{align*}
+
+\section{Relações importantes definidas sobre conjuntos}
+\label{sec:relacoes}
+
+\subsection{Pertinência (relação entre elementos e conjuntos)}
+\label{sec:pertinencia}
+
+\begin{align*}
+  4 \in A & \hspace*{\fill} & 4 \text{ é um elemento de (pertence a) } A.\\
+  4 \not\in C & \hspace*{\fill} & 4 \text { não é um elemento de } C.\\
+  \{4\} \not\in A & & \{4\}\text { não é um elemento de } A.\\
+  \{4\} \in C & & \{4\}\text { é um elemento de } C.
+\end{align*}
+
+\textbf{Importante:} \(4\) e \(\{4\}\) são objetos diferentes!
+
+\subsection{Continência (relação entre conjuntos)}
+\label{sec:continencia}
+
+\(X\) é um \textbf{subconjunto} de \(Y\) se e somente se todos os elementos de \(X\) também são elementos de \(Y\).
+
+\begin{align*}
+  A \subseteq \mathbb{N} & & A \text{ é um subconjunto do (está contido no) conjunto dos números naturais.}\\
+  A \subseteq E & & A \text{ é um subconjunto de } E.\\
+  E \subseteq A & & E \text{ é um subconjunto de } A.\\
+  A \subset \mathbb{N} & & A \text{ é um subconjunto próprio de (está estritamente contido em) } \mathbb{N}.\\
+  A \not\subset E & & A \text{ não é um subconjunto próprio de } E.
+\end{align*}
+
+\subsection{Igualdade entre conjuntos}
+\label{sec:igualdade}
+
+Conjuntos são definidos somente por seus elementos. Dois conjuntos são idênticos se e somente se eles possuem os mesmos elementos. Essa definição de identidade tem como consequência que \(A\) e \(E\) acima são o mesmo conjunto, mesmo que seus elementos tenham sido apresentados em ordens distintas na seção \ref{sec:conjuntos}.
+
+Um fato importante, que se segue dessa definição de identidade: para quaisquer conjuntos \(X\) e \(Y\), se \(X\subseteq Y\) e \(Y\subseteq X\), então \(X = Y\).
+
+\subsection{Conjunto potência (ou conjunto de partes)}
+\label{sec:conjunto-potencia}
+
+Um conjunto muito especial que pode ser formado a partir de qualquer conjunto é o conjunto potência. Dado um conjunto \(X\), o conjunto potência de \(X\), ou \(\mathcal{P}(X)\), é o conjunto de todos os subconjuntos de \(X\).
+
+Assim, se \(A = \{2, 3, 4\}\), então \(\mathcal{P}(A) = \{\emptyset, \{2\}, \{3\}, \{4\}, \{2, 3\}, \{3, 4\}, \{2, 4\}, \{2, 3, 4\}\}\).
+
+Duas conclusões seguem da definição de subconjunto apresentada na seção \ref{sec:continencia}:
+\begin{itemize}
+\item Todo conjunto é um subconjunto de si mesmo.
+\item O conjunto vazio, denotado por \(\emptyset\), é um subconjunto de qualquer conjunto.
+
+  Se você não se convence disso, tente mostrar como isso poderia ser falso; isto é, dado um conjunto \(X\) qualquer, tente mostrar que \(\emptyset\) não é um subconjunto de \(X\), partindo da definição de subconjunto. Esse tipo de raciocínio é muito usado em provas por contradição (ou \emph{reductio ad absurdum}).
+\end{itemize}
+
+\end{document}
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% End:
